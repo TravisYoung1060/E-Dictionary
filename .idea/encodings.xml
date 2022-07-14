@@ -4,5 +4,7 @@
     <file url="file://$PROJECT_DIR$/List.c" charset="GBK" />
     <file url="file://$PROJECT_DIR$/List.h" charset="GBK" />
     <file url="file://$PROJECT_DIR$/main.c" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/public.c" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/public.h" charset="GBK" />
   </component>
 </project>

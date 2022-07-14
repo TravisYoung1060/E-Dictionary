@@ -1,6 +1,6 @@
 /*
  * Created by FallenGemini on 2022/7/13.
- * å…¬å…±åŠŸèƒ½å£°æ˜
+ * ¹«¹²¹¦ÄÜÉùÃ÷
  */
 
 #ifndef HAOJIXING_ELECTRONIC_DICTIONARY_PUBLIC_H
@@ -9,51 +9,57 @@
 #include "List.h"
 
 /*!
- * è´¦æˆ·ç™»å½•
- * è¯»å…¥ç”¨æˆ·è´¦å·ä¸å¯†ç ï¼Œå¹¶æ£€éªŒæ˜¯å¦æ­£ç¡®
- * @param account è´¦æˆ·
- * @param password å¯†ç 
- * @param aPtr æ–‡ä»¶å¯¹æ¯”
+ * ÕË»§µÇÂ¼
+ * ¶ÁÈëÓÃ»§ÕËºÅÓëÃÜÂë£¬²¢¼ìÑéÊÇ·ñÕıÈ·
+ * @param account ÕË»§
+ * @param password ÃÜÂë
+ * @param aPtr ÎÄ¼ş¶Ô±È
  */
 void LogIn(char* account, char* password, FILE* aPtr);
 
 /*!
- * è´¦æˆ·æ³¨é”€
- * æ³¨é”€ç”¨æˆ·è´¦å·ä¸å¯†ç ï¼Œå¹¶æ£€éªŒæ˜¯å¦æ­£ç¡®
- * @param account è´¦æˆ·
- * @param password å¯†ç 
- * @param aPtr æ–‡ä»¶å¯¹æ¯”
+ * ÕË»§×¢Ïú
+ * ×¢ÏúÓÃ»§ÕËºÅÓëÃÜÂë£¬²¢¼ìÑéÊÇ·ñÕıÈ·
+ * @param account ÕË»§
+ * @param password ÃÜÂë
+ * @param aPtr ÎÄ¼ş¶Ô±È
  */
 void LogOut(char* account,char* password, FILE* aPtr);
 
 /*!
- * å±•ç¤ºåŠŸèƒ½èœå•
+ * Õ¹Ê¾¹¦ÄÜ²Ëµ¥
  */
 void Menu();
 
 /*!
- * é¡ºåºå¾ªç¯æ’­æ”¾èƒŒæ™¯éŸ³ä¹
- * @param fPtr å£°éŸ³æ–‡ä»¶
+ * Ë³ĞòÑ­»·²¥·Å±³¾°ÒôÀÖ
+ * @param fPtr ÉùÒôÎÄ¼ş
  */
 void Music(FILE* fPtr);
 
  /*!
-  * è¯»å–ç”¨æˆ·è¾“å…¥çš„è‹±æ–‡å•è¯ï¼Œå±•ç¤ºå…¶ä¸­æ–‡é‡Šä¹‰ï¼Œå½“è¾“å…¥ä¸å­˜åœ¨çš„å•è¯æ—¶ä¼šæŠ¥é”™
-  * @param dlList é“¾è¡¨å¤´ç»“ç‚¹
-  * @param word æ‰€è¦æŸ¥æ‰¾çš„è‹±æ–‡å•è¯
+  * ¶ÁÈ¡ÓÃ»§ÊäÈëµÄÓ¢ÎÄµ¥´Ê£¬Õ¹Ê¾ÆäÖĞÎÄÊÍÒå£¬µ±ÊäÈë²»´æÔÚµÄµ¥´ÊÊ±»á±¨´í
+  * @param dlList Á´±íÍ·½áµã
+  * @param En ËùÒª²éÕÒµÄÓ¢ÎÄµ¥´Ê
   */
-void EnToCn(DoublyLinkList* dlList, char* word);
+void EnToCn(DoublyLinkList* dlList, char* En);
 
 /*!
- * è¯»å–ç”¨æˆ·è¾“å…¥çš„ä¸­æ–‡é‡Šä¹‰ï¼Œå±•ç¤ºå…¶è‹±æ–‡å•è¯ï¼Œå½“è¾“å…¥ä¸å­˜åœ¨çš„å•è¯æ—¶ä¼šæŠ¥é”™
- * @param dlList é“¾è¡¨å¤´ç»“ç‚¹
- * @param word ç´¢è¦æŸ¥æ‰¾çš„ä¸­æ–‡é‡Šä¹‰
+ * ¶ÁÈ¡ÓÃ»§ÊäÈëµÄÖĞÎÄÊÍÒå£¬Õ¹Ê¾ÆäÓ¢ÎÄµ¥´Ê£¬µ±ÊäÈë²»´æÔÚµÄµ¥´ÊÊ±»á±¨´í
+ * @param dlList Á´±íÍ·½áµã
+ * @param Cn Ë÷Òª²éÕÒµÄÖĞÎÄÊÍÒå
  */
-void CnToEn(DoublyLinkList* dlList, char* word);
+void CnToEn(DoublyLinkList* dlList, char* Cn);
 
 /*!
- * é€€å‡ºç¨‹åºï¼Œé€€å‡ºæ—¶ä¼šè‡ªåŠ¨ä¿å­˜ç›¸å…³æ•°æ®
- * @param rPtr æ–‡ä»¶
+ * ¶ÁÈ¡ÓÃ»§ÊäÈëµÄÓ¢ÎÄÊÍÒå£¬Õ¹Ê¾Æä¿ÉÄÜËÑË÷µÄÓ¢ÎÄµ¥´Ê
+ * @param dlList Á´±íÍ·½áµã
+ * @param En Ä£ºıµ¥´Ê
+ */
+void FuzzySearch(DoublyLinkList* dlList, char* En);
+/*!
+ * ÍË³ö³ÌĞò£¬ÍË³öÊ±»á×Ô¶¯±£´æÏà¹ØÊı¾İ
+ * @param rPtr ÎÄ¼ş
  */
 void Exit(FILE* rPtr);
 

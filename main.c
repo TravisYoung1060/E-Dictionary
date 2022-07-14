@@ -6,6 +6,7 @@
 #include <malloc.h>
 #include "List.h"
 #include "admin.h"
+#include "public.h"
 
 int main() {
     DoublyNode* WordListTail = (DoublyNode*)malloc(sizeof (DoublyNode));
@@ -19,7 +20,7 @@ int main() {
 
     printf("样例测试\n");
     Word word1 = {"abandon","v.","抛弃"};
-    Word word2 = {"abstract","adj.","抽象的"};
+    Word word2 = {"abstract","adj.","抽象的,不具体的"};
     Word word3 = {"absent","adj.","缺席的"};
 
     InsertDoublyLinkList(WordListHead,1,word1);
@@ -47,5 +48,10 @@ int main() {
     Modify(WordListHead,1,"abandon","v.","抛弃");
     PrintDoublyLinkList(WordListHead);
 
+    EnToCn(WordListHead,"abandon");
+    CnToEn(WordListHead,"抽象的");
+
+    InsertDoublyLinkList(WordListHead,2,word3);
+    FuzzySearch(WordListHead,"abs");
     return 0;
 }
