@@ -40,5 +40,7 @@ int main() {
     ChangeDoublyLinkElement(WordListHead,2,word1);
     PrintDoublyLinkList(WordListHead);
 
+    ChangeDoublyLinkElement(WordListHead,2,word3);
+    PrintDoublyLinkList(WordListHead);
     return 0;
 }
