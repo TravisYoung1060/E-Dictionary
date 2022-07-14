@@ -4,7 +4,16 @@
  */
 #include <stdio.h>
 #include <malloc.h>
+#include <stdbool.h>
 #include "List.h"
+
+int equal(Word word1, Word word2) {
+    int flag = TRUE;
+    if(strcmp(word1.En,word2.En) != 0) flag = FALSE;
+    if(strcmp(word1.attribute,word2.attribute) != 0) flag = FALSE;
+    if(strcmp(word1.Cn,word2.Cn) != 0) flag = FALSE;
+    return flag;
+}
 
 void InsertDoublyLinkList(DoublyLinkList* dlList, int pos, Word word) {
     DoublyNode* currentNode = dlList->next;   //取出第一个结点
@@ -46,7 +55,7 @@ void InsertDoublyLinkList(DoublyLinkList* dlList, int pos, Word word) {
     }
 }
 
-void DeleteDoublyLinkList(DoublyLinkList* dlList, int pos)
+void DeleteDoublyLinkListByPos(DoublyLinkList* dlList, int pos)
 {
     DoublyNode* currentNode = dlList->next;   //取出第一个结点
     int length = dlList->length;  //链表长度
@@ -65,6 +74,38 @@ void DeleteDoublyLinkList(DoublyLinkList* dlList, int pos)
     for(int i = 1; i < pos; i++)    //找到位置
         currentNode = currentNode->next;
 
+    if(currentNode->prev == NULL)    //前缀结点为空
+    {
+        dlList->next = currentNode->next;
+        (currentNode->next)->prev = NULL;
+        printf("删除成功\n");
+    }
+    else    //前缀结点不为空
+    {
+        DoublyNode* preNode = currentNode->prev;
+        DoublyNode* nxtNode = currentNode->next;
+        preNode->next = nxtNode;
+        nxtNode->prev = preNode;
+        printf("删除成功\n");
+    }
+}
+
+void DeleteDoublyLinkListByWord(DoublyLinkList* dlList, Word word)
+{
+    DoublyNode* currentNode = dlList->next;   //取出第一个结点
+    int length = dlList->length;  //链表长度
+    int pos = 1;
+    for(; pos <= length; pos++)
+    {
+        if(equal(currentNode->word,word)) break;
+        currentNode = currentNode->next;
+    }
+    if(pos == length)
+    {
+        printf("没有找到这个单词，删除失败\n");
+        return;
+    }
+    dlList->length = length - 1;
     if(currentNode->prev == NULL)    //前缀结点为空
     {
         dlList->next = currentNode->next;

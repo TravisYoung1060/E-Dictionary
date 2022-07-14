@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "List.h"
+#include "admin.h"
 
 int main() {
     DoublyNode* WordListTail = (DoublyNode*)malloc(sizeof (DoublyNode));
@@ -27,7 +28,7 @@ int main() {
     InsertDoublyLinkList(WordListHead,1,word2);
     PrintDoublyLinkList(WordListHead);
 
-    DeleteDoublyLinkList(WordListHead,2);
+    DeleteDoublyLinkListByPos(WordListHead,2);
     PrintDoublyLinkList(WordListHead);
 
     InsertDoublyLinkList(WordListHead,1,word3);
@@ -38,6 +39,12 @@ int main() {
     PrintDoublyLinkList(WordListHead);
 
     ChangeDoublyLinkElement(WordListHead,2,word1);
+    PrintDoublyLinkList(WordListHead);
+
+    Delete(WordListHead,"abandon","v.","테폴");
+    PrintDoublyLinkList(WordListHead);
+
+    Modify(WordListHead,1,"abandon","v.","테폴");
     PrintDoublyLinkList(WordListHead);
 
     return 0;

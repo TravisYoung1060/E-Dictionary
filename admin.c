@@ -4,17 +4,26 @@
  */
 #include "admin.h"
 
-/*
- * 增加单词
- */
-void Add();
+void Add(DoublyLinkList * dlList, char* En, char* attribute, char* Cn)
+{
+    Word word = {En,attribute,Cn};
+    InsertDoublyLinkList(dlList,dlList->length,word);
+}
 
-/*
- * 删除单词
- */
-void Delete();
+void Delete(DoublyLinkList * dlList, char* En, char* attribute, char* Cn)
+{
+    Word word;
+    strcpy(word.En,En);
+    strcpy(word.attribute,attribute);
+    strcpy(word.Cn,Cn);
+    DeleteDoublyLinkListByWord(dlList,word);
+}
 
-/*
- * 修改单词
- */
-void Modify();
+void Modify(DoublyLinkList * dlList, int pos, char* En, char* attribute, char* Cn)
+{
+    Word word;
+    strcpy(word.En,En);
+    strcpy(word.attribute,attribute);
+    strcpy(word.Cn,Cn);
+    ChangeDoublyLinkElement(dlList, pos, word);
+}
